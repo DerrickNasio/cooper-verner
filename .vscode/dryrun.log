@@ -1,5 +1,12 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/Nasio/Documents/cooper-verner'
+echo "Compiling test library..."
+gcc   -c tests.c
+ 
+echo "Compiling integrator library..."
+gcc   -c butcher_tableau.c dense_output.c Verner.c
+echo "Compiling main method..."
+gcc   -c main.c
 echo "Linking object files..."
 gcc   main.o tests.o Verner.o -o Verner
 echo "Done."

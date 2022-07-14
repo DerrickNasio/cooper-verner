@@ -25,5 +25,5 @@ Verner.o : butcher_tableau.c dense_output.c Verner.c Verner.h
 
 clean :
 	@echo "Cleaning up..."
-	rm main.o tests.o Verner.o Verner
+	\rm main.o tests.o Verner.o Verner
 	@echo "Done."

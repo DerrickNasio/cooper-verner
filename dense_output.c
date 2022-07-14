@@ -13,7 +13,7 @@ void DenseOutput(int n_equat, double t, double y[n_equat], double h_step, double
     double *const k10 = myWorkspace->k[9];
     double *const k11 = myWorkspace->k[10];
 
-    int outputSize = (int)(sizeof(t_output) / sizeof(t_output[0]));
+    int outputSize = *(&t_output + 1) - t_output;
 
     for (int i = 0; i < outputSize; i++)
     {

@@ -2,68 +2,38 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
 # GNU Make 4.3
- 
 # Built for x86_64-redhat-linux-gnu
- 
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
- 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
- 
 # This is free software: you are free to change and redistribute it.
- 
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
- 
-# Make data base, printed on Thu Jul 14 14:20:46 2022
- 
+# Make data base, printed on Thu Jul 14 20:50:55 2022
 
 # Variables
- 
 
- 
 # environment
- 
 GDK_BACKEND = x11
- 
 # environment
- 
 LC_ALL = C
- 
 # environment
- 
 NO_AT_BRIDGE = 1
- 
 # environment
- 
 GJS_DEBUG_OUTPUT = stderr
- 
 # environment
- 
 VSCODE_CWD = /home/Nasio
- 
 # environment
- 
 GDM_LANG = en_GB.UTF-8
- 
 # default
- 
 MAKE_COMMAND := make
- 
 # environment
- 
 define BASH_FUNC_which%%
- 
 () {  ( alias;
  eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
- 
 }
 endef
- 
 # automatic
- 
 @D = $(patsubst %/,%,$(dir $@))
- 
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -87,7 +57,7 @@ VSCODE_CODE_CACHE_PATH = /home/Nasio/.config/Code/CachedData/b06ae3b2d2dbfe28bca
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.6XQUO1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.06RSP1
 # default
 .LOADED := 
 # default
@@ -121,13 +91,13 @@ MAKEFILE_LIST := makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 12521
+VSCODE_PID = 4183
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/1777,unix/unix:/tmp/.ICE-unix/1777
+SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/1639,unix/unix:/tmp/.ICE-unix/1639
 # automatic
 *F = $(notdir $*)
 # environment
@@ -163,7 +133,7 @@ MAKEFILES :=
 # automatic
 ^F = $(notdir $^)
 # environment
-INVOCATION_ID = b3bb0d1821fd4b18856be105766e8697
+INVOCATION_ID = cf5a87797e8b41ea9490f8c3828ffa94
 # environment
 USERNAME = Nasio
 # environment
@@ -187,7 +157,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := Verner
 # environment
-SYSTEMD_EXEC_PID = 1823
+SYSTEMD_EXEC_PID = 1701
 # environment
 HISTCONTROL = ignoredups
 # environment
@@ -199,19 +169,19 @@ USER = Nasio
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1654
+MANAGERPID = 1512
 # environment
 which_declare = declare -f
 # environment
 DEBUGINFOD_URLS = https://debuginfod.fedoraproject.org/ 
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 12521
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4183
 # environment
 _ = /usr/bin/make
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:31766
+JOURNAL_STREAM = 8:27485
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -247,7 +217,7 @@ GDMSESSION = gnome
 
 # Directories
 
-# . (device 41, inode 5089): 18 files, no impossibilities.
+# . (device 40, inode 5089): 18 files, no impossibilities.
 
 # 18 files, no impossibilities in 1 directories.
 
@@ -314,6 +284,7 @@ butcher_tableau.c:
 main.o: main.c tests.o Verner.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 15):
 	@echo "Compiling main method..."
@@ -343,11 +314,8 @@ Verner.o: butcher_tableau.c dense_output.c Verner.c Verner.h
 makefile:
 #  Implicit rule search has been done.
 #  Last modified 2022-07-14 14:14:37.011399334
- 
 #  File has been updated.
- 
 #  Successfully updated.
- 
 
 # Not a target:
 Verner.c:
@@ -378,6 +346,6 @@ Verner: main.o tests.o Verner.o
 # strcache performance: lookups = 49 / hit rate = 48%
 # hash-table stats:
 # Load=25/8192=0%, Rehash=0, Collisions=0/49=0%
-# Finished Make data base on Thu Jul 14 14:20:46 2022
+# Finished Make data base on Thu Jul 14 20:50:55 2022
 
  

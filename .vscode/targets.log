@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul 14 20:50:55 2022
+# Make data base, printed on Thu Jul 14 22:47:12 2022
 
 # Variables
 
@@ -241,7 +241,7 @@ clean:
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 27):
 	@echo "Cleaning up..."
-	rm main.o tests.o Verner.o Verner
+	\rm main.o tests.o Verner.o Verner
 	@echo "Done."
 
 # Not a target:
@@ -284,7 +284,6 @@ butcher_tableau.c:
 main.o: main.c tests.o Verner.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 15):
 	@echo "Compiling main method..."
@@ -298,6 +297,7 @@ Verner.h:
 
 # Not a target:
 dense_output.c:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -313,7 +313,7 @@ Verner.o: butcher_tableau.c dense_output.c Verner.c Verner.h
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-14 14:14:37.011399334
+#  Last modified 2022-07-14 22:45:11.765042107
 #  File has been updated.
 #  Successfully updated.
 
@@ -346,6 +346,6 @@ Verner: main.o tests.o Verner.o
 # strcache performance: lookups = 49 / hit rate = 48%
 # hash-table stats:
 # Load=25/8192=0%, Rehash=0, Collisions=0/49=0%
-# Finished Make data base on Thu Jul 14 20:50:55 2022
+# Finished Make data base on Thu Jul 14 22:47:12 2022
 
  

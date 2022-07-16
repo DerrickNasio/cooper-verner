@@ -7,21 +7,21 @@
 CC = gcc  # compiler to use
 
 Verner : main.o tests.o Verner.o
-	@echo "Linking object files..."
-	${CC} main.o tests.o Verner.o -o Verner
+	@echo "Linking..."
+	${CC} main.o tests.o Verner.o -lc -lm -o Verner
 	@echo "Done."
 
-main.o : main.c tests.o Verner.o
+main.o : main.c tests.h Verner.h
 	@echo "Compiling main method..."
-	${CC} -c main.c
+	${CC} -c -g main.c -o main.o
 
 tests.o : tests.c tests.h
 	@echo "Compiling test library..."
-	${CC} -c tests.c
+	${CC} -c -g tests.c -o tests.o
 
 Verner.o : butcher_tableau.c dense_output.c Verner.c Verner.h
 	@echo "Compiling integrator library..."
-	${CC} -c butcher_tableau.c dense_output.c Verner.c
+	${CC} -c -g butcher_tableau.c dense_output.c Verner.c -o Verner.o
 
 clean :
 	@echo "Cleaning up..."

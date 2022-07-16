@@ -24,4 +24,4 @@ struct workspace
 void Verner(void (*RHS)(double, double *, double *), int n_equat, double t, double y[n_equat], double h_step, double t_output[]);
 void UpdateStages(void (*RHS)(double, double *, double *), int n_equat, double t, double y[n_equat], double h_step, struct workspace *myWorkspace);
 void DenseOutput(int n_equat, double t, double y[n_equat], double h_step, double t_output[], struct workspace *myWorkspace);
-void Step(int n_equat, double t, double y[n_equat], double h_step, struct workspace *myWorkspace);
+void Step(int n_equat, double y[n_equat], double h_step, struct workspace *myWorkspace);

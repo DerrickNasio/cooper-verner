@@ -5,7 +5,7 @@
 #include "tests.h"
 #include "Verner.h"
 
-int main(int argc, char *argv[])
+int main(void)
 {
     puts("Program: Cooper-Verner 11-stage 8th-order Runge-Kutta Scheme");
     printf("\n");

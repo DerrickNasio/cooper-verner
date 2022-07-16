@@ -22,7 +22,7 @@ void Verner(void (*RHS)(double, double *, double *), int n_equat, double t, doub
 
         UpdateStages(RHS, n_equat, t, y, h_step, myWorkspace);
         DenseOutput(n_equat, t, y, h_step, t_output, myWorkspace);
-        Step(n_equat, t, y, h_step, myWorkspace);
+        Step(n_equat, y, h_step, myWorkspace);
         t = t + h_step;
         stepsCounter = stepsCounter + 1;
     }
@@ -116,7 +116,7 @@ void UpdateStages(void (*RHS)(double, double *, double *), int n_equat, double t
     return;
 }
 
-void Step(int n_equat, double t, double y[n_equat], double h_step, struct workspace *myWorkspace)
+void Step(int n_equat, double y[n_equat], double h_step, struct workspace *myWorkspace)
 {
     /* Fetch the stages k1 and k8 through k11. */
     double *const k1 = myWorkspace->k[0];

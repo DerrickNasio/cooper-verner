@@ -1,3 +1,13 @@
 {
-    "makefile.extensionOutputFolder": "./.vscode"
+    "makefile.extensionOutputFolder": "./.vscode",
+    "files.associations": {
+        "math.h": "c"
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/Nasio/Downloads/cooper-verner/bin/release",
+            "binaryPath": "/home/Nasio/Downloads/cooper-verner/bin/release/Verner",
+            "binaryArgs": []
+        }
+    ]
 }

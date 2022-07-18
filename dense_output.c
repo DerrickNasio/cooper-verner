@@ -19,7 +19,7 @@ void dense_output(
     double *const k10 = workspace_struct->k[9];
     double *const k11 = workspace_struct->k[10];
 
-    /* Calculate the five basis functions required for the interpolation. */
+    /* Calculate the basis functions required for the interpolation. */
     double b_function[5];
     b_function[0] = 1.0 + theta * (-5.0 + theta * (10.0 + theta * (-35.0 / 4.0 + theta * (14.0 / 5.0))));
     b_function[1] = theta * ((49.0 + 7.0 * sqrt21) / 12.0 + theta * ((-245.0 - 21.0 * sqrt21) / 18.0 + theta * ((196.0 + 7.0 * sqrt21) / 12.0 + theta * (-98.0 / 15.0))));
@@ -29,13 +29,13 @@ void dense_output(
 
     /* Combine the k-stages in the final sum to approximate the solution. */
     double y_output[number_of_equations];
-    for (int j = 0; j < number_of_equations; j++)
+    for (size_t j = 0; j < number_of_equations; j++)
         y_output[j] = y[j] + (theta * h_step) * (b_function[0] * k1[j] + b_function[1] * k8[j] + b_function[2] * k9[j] + b_function[3] * k10[j] + b_function[4] * k11[j]);
 
     /* Print the results to console. */
-    printf("t = %8.lf", t + (theta * h_step));
-    for (int j = 0; j < number_of_equations; j++)
-        printf(", y[%i] = %20.16lf", j, y_output[j]);
+    printf("t = %8.6lf", t + (theta * h_step));
+    for (size_t j = 0; j < number_of_equations; j++)
+        printf(", y[%li] = %20.16lf", j, y_output[j]);
 
     printf("\n");
 

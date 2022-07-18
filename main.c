@@ -13,8 +13,8 @@ int main(void)
     /* Specify the ODE function or system to be solved. */
 
     void (*RHS)(double, double *, double *);
-    RHS = RHSCosine;
-    size_t number_of_equations = 1;
+    RHS = RHSSineCosine;
+    size_t number_of_equations = 2;
 
     /* Allocate memory to the global integration variables. */
 
@@ -29,7 +29,8 @@ int main(void)
     /* Set the initial conditions of the ODE system. */
 
     t = 0.0;
-    y[0] = 0.0;
+    y[0] = 1.0;
+    y[1] = 0.0;
 
     double h_step = 0.1; // The constant step size taken by the numerical integrator
     printf("h_step = %G\n", h_step);
@@ -37,10 +38,10 @@ int main(void)
 
     /* Specify the points at which to query the integrator. */
 
-    size_t number_of_outputs = 16;
+    size_t number_of_outputs = 13;
     double t_output[number_of_outputs];
-    for (int i = 0; i <= 15; i++)
-        t_output[i] = (double)i;
+    for (size_t i = 0; i < number_of_outputs; i++)
+        t_output[i] = ((double)i / 12.0) * 3.14159265358979323846;
 
     /* Issue a call to the primary integrator method. */
 

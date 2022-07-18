@@ -1,11 +1,11 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/Nasio/Downloads/cooper-verner'
  
 echo "Creating directories"
 mkdir -p build/release/ build/release/ build/release/ build/release/ build/release/
 mkdir -p bin/release
-echo "Beginning release build"
  
+echo "Beginning release build"
 date '+%s' > ./.release_time
 make all --no-print-directory
  
@@ -13,8 +13,8 @@ echo "Compiling: Verner.c -> build/release/Verner.o"
 date '+%s' > build/release/.Verner.o_time
 cc  -std=c11 -Wall -Wextra -g -D NDEBUG -I . -MP -MMD -c Verner.c -o build/release/Verner.o
 echo -en "\t Compile time: "
-read st < build/release/.Verner.o_time ; rm -f build/release/.Verner.o_time ; st=$((`date '+%s'` - $st - 86400)) ; echo `date -u -d @$st '+%H:%M:%S'`
  
+read st < build/release/.Verner.o_time ; rm -f build/release/.Verner.o_time ; st=$((`date '+%s'` - $st - 86400)) ; echo `date -u -d @$st '+%H:%M:%S'`
 echo "Compiling: main.c -> build/release/main.o"
 date '+%s' > build/release/.main.o_time
 cc  -std=c11 -Wall -Wextra -g -D NDEBUG -I . -MP -MMD -c main.c -o build/release/main.o
@@ -46,7 +46,6 @@ rm -f Verner
 ln -s bin/release/Verner Verner
  
 echo -n "Total build time: "
- 
 read st < ./.release_time ; rm -f ./.release_time ; st=$((`date '+%s'` - $st - 86400)) ; echo `date -u -d @$st '+%H:%M:%S'`
 make: Leaving directory '/home/Nasio/Downloads/cooper-verner'
  

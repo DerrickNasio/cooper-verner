@@ -21,7 +21,10 @@ struct workspace
 
 /* Function prototypes */
 // Verner.c
-void Verner(void (*RHS)(double, double *, double *), int n_equat, double t, double y[n_equat], double h_step, double t_output[]);
-void UpdateStages(void (*RHS)(double, double *, double *), int n_equat, double t, double y[n_equat], double h_step, struct workspace *myWorkspace);
-void DenseOutput(int n_equat, double t, double y[n_equat], double h_step, double t_output[], struct workspace *myWorkspace);
-void Step(int n_equat, double y[n_equat], double h_step, struct workspace *myWorkspace);
+void Verner(size_t number_of_equations, double t, double h_step, double y[number_of_equations], void (*RHS)(double, double *, double *), size_t number_of_outputs, double t_output[number_of_outputs]);
+
+void update_stages(size_t number_of_equations, double t, double h_step, double y[number_of_equations], void (*RHS)(double, double *, double *), struct workspace *workspace_struct);
+void make_step(int number_of_equations, double h_step, double y[number_of_equations], struct workspace *workspace_struct);
+
+// dense_output.c
+void dense_output(size_t number_of_equations, double t, double theta, double h_step, double y[number_of_equations], struct workspace *workspace_struct);

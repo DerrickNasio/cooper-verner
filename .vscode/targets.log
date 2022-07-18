@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Sat Jul 16 23:13:52 2022
+# Make data base, printed on Mon Jul 18 13:11:27 2022
 
 # Variables
 
@@ -70,7 +70,7 @@ VSCODE_CODE_CACHE_PATH = /home/Nasio/.config/Code/CachedData/b06ae3b2d2dbfe28bca
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.ZVEJP1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.28MWP1
 # default
 .LOADED := 
 # default
@@ -108,7 +108,7 @@ MAKEFILE_LIST := makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 15561
+VSCODE_PID = 17908
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -120,7 +120,7 @@ INSTALL = install
 # makefile (from 'makefile', line 18)
 INCLUDES = -I $(SRC_PATH)
 # environment
-SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/1641,unix/unix:/tmp/.ICE-unix/1641
+SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/1681,unix/unix:/tmp/.ICE-unix/1681
 # automatic
 *F = $(notdir $*)
 # environment
@@ -154,7 +154,7 @@ MAKEFILES :=
 # automatic
 ^F = $(notdir $^)
 # environment
-INVOCATION_ID = 532b1541d0ba43839d8676b9489a37b7
+INVOCATION_ID = 6341fb91732347e79c65a1d46801e56e
 # environment
 USERNAME = Nasio
 # environment
@@ -190,7 +190,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := release
 # environment
-SYSTEMD_EXEC_PID = 1694
+SYSTEMD_EXEC_PID = 1740
 # environment
 HISTCONTROL = ignoredups
 # environment
@@ -204,15 +204,14 @@ MAKE_VERSION := 4.3
 # 'override' directive
 .SHELLSTATUS := 0
 # environment
-MANAGERPID = 1509
+MANAGERPID = 1561
 # environment
 which_declare = declare -f
 # environment
 DEBUGINFOD_URLS = https://debuginfod.fedoraproject.org/ 
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 15561
+GIO_LAUNCHED_DESKTOP_FILE_PID = 17908
 # environment
- 
 _ = /usr/bin/make
 # makefile (from 'makefile', line 24)
 DLINK_FLAGS = 
@@ -221,7 +220,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from 'makefile', line 28)
 INSTALL_PREFIX = usr/local
 # environment
-JOURNAL_STREAM = 8:27485
+JOURNAL_STREAM = 8:30788
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -308,6 +307,7 @@ debug: CFLAGS :=  -std=c11 -Wall -Wextra -g -D DEBUG
 # makefile (from 'makefile', line 62)
 debug: BIN_PATH := bin/debug
 # makefile (from 'makefile', line 56)
+ 
 debug: LDFLAGS :=  -lm 
 debug: dirs
 #  Phony target (prerequisite of .PHONY).
@@ -452,7 +452,6 @@ install:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
 # variable set hash-table stats:
 # Load=1/32=3%, Rehash=0, Collisions=0/2=0%
 #  recipe to execute (from 'makefile', line 117):
@@ -533,6 +532,6 @@ release: dirs
 # strcache performance: lookups = 96 / hit rate = 55%
 # hash-table stats:
 # Load=43/8192=1%, Rehash=0, Collisions=0/96=0%
-# Finished Make data base on Sat Jul 16 23:13:52 2022
+# Finished Make data base on Mon Jul 18 13:11:27 2022
 
  

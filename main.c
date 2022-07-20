@@ -1,5 +1,5 @@
 /*
- * This is the main function that calls the IMEX numerical integrator routine for execution.
+ * This is the main function that calls the Cooper-Verner numerical integrator routine for execution.
  * The function to be integrated and its initial conditions, as well as the step-size, are provided by the user.
  */
 #include "tests.h"

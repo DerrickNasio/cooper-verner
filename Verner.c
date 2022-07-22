@@ -125,17 +125,17 @@ void update_stages(
     /* k9 stage */
     for (i = 0; i < number_of_equations; i++)
         workspace_struct->y_temp[i] = y[i] + h_step * (RK_A[8][0] * k1[i] + RK_A[8][1] * k2[i] + RK_A[8][2] * k3[i] + RK_A[8][3] * k4[i] + RK_A[8][4] * k5[i] + RK_A[8][5] * k6[i] + RK_A[8][6] * k7[i] + RK_A[8][7] * k8[i]);
-    RHS(t + h_step * RK_c[5], workspace_struct->y_temp, k9);
+    RHS(t + h_step * RK_c[8], workspace_struct->y_temp, k9);
 
     /* k10 stage */
     for (i = 0; i < number_of_equations; i++)
         workspace_struct->y_temp[i] = y[i] + h_step * (RK_A[9][0] * k1[i] + RK_A[9][1] * k2[i] + RK_A[9][2] * k3[i] + RK_A[9][3] * k4[i] + RK_A[9][4] * k5[i] + RK_A[9][5] * k6[i] + RK_A[9][6] * k7[i] + RK_A[9][7] * k8[i] + RK_A[9][8] * k9[i]);
-    RHS(t + h_step * RK_c[6], workspace_struct->y_temp, k10);
+    RHS(t + h_step * RK_c[9], workspace_struct->y_temp, k10);
 
     /* k11 stage */
     for (i = 0; i < number_of_equations; i++)
         workspace_struct->y_temp[i] = y[i] + h_step * (RK_A[10][0] * k1[i] + RK_A[10][1] * k2[i] + RK_A[10][2] * k3[i] + RK_A[10][3] * k4[i] + RK_A[10][4] * k5[i] + RK_A[10][5] * k6[i] + RK_A[10][6] * k7[i] + RK_A[10][7] * k8[i] + RK_A[10][8] * k9[i] + RK_A[10][9] * k10[i]);
-    RHS(t + h_step * RK_c[7], workspace_struct->y_temp, k11);
+    RHS(t + h_step * RK_c[10], workspace_struct->y_temp, k11);
 
     return;
 }

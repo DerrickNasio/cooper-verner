@@ -2,49 +2,43 @@ make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/Nasio/Downloads/cooper-verner'
  
 echo "Creating directories"
-mkdir -p build/release/ build/release/ build/release/ build/release/ build/release/
+mkdir -p build/release/ build/release/ build/release/ build/release/
 mkdir -p bin/release
  
 echo "Beginning release build"
 date '+%s' > ./.release_time
 make all --no-print-directory
  
-echo "Compiling: Verner.c -> build/release/Verner.o"
-date '+%s' > build/release/.Verner.o_time
-cc  -std=c11 -Wall -Wextra -g -D NDEBUG -I . -MP -MMD -c Verner.c -o build/release/Verner.o
-echo -en "\t Compile time: "
- 
-read st < build/release/.Verner.o_time ; rm -f build/release/.Verner.o_time ; st=$((`date '+%s'` - $st - 86400)) ; echo `date -u -d @$st '+%H:%M:%S'`
 echo "Compiling: main.c -> build/release/main.o"
 date '+%s' > build/release/.main.o_time
 cc  -std=c11 -Wall -Wextra -g -D NDEBUG -I . -MP -MMD -c main.c -o build/release/main.o
 echo -en "\t Compile time: "
 read st < build/release/.main.o_time ; rm -f build/release/.main.o_time ; st=$((`date '+%s'` - $st - 86400)) ; echo `date -u -d @$st '+%H:%M:%S'`
-echo "Compiling: butcher_tableau.c -> build/release/butcher_tableau.o"
-date '+%s' > build/release/.butcher_tableau.o_time
-cc  -std=c11 -Wall -Wextra -g -D NDEBUG -I . -MP -MMD -c butcher_tableau.c -o build/release/butcher_tableau.o
+ 
+echo "Compiling: verner.c -> build/release/verner.o"
+date '+%s' > build/release/.verner.o_time
+cc  -std=c11 -Wall -Wextra -g -D NDEBUG -I . -MP -MMD -c verner.c -o build/release/verner.o
 echo -en "\t Compile time: "
-read st < build/release/.butcher_tableau.o_time ; rm -f build/release/.butcher_tableau.o_time ; st=$((`date '+%s'` - $st - 86400)) ; echo `date -u -d @$st '+%H:%M:%S'`
-echo "Compiling: dense_output.c -> build/release/dense_output.o"
-date '+%s' > build/release/.dense_output.o_time
-cc  -std=c11 -Wall -Wextra -g -D NDEBUG -I . -MP -MMD -c dense_output.c -o build/release/dense_output.o
+read st < build/release/.verner.o_time ; rm -f build/release/.verner.o_time ; st=$((`date '+%s'` - $st - 86400)) ; echo `date -u -d @$st '+%H:%M:%S'`
+echo "Compiling: timestamp.c -> build/release/timestamp.o"
+date '+%s' > build/release/.timestamp.o_time
+cc  -std=c11 -Wall -Wextra -g -D NDEBUG -I . -MP -MMD -c timestamp.c -o build/release/timestamp.o
 echo -en "\t Compile time: "
-read st < build/release/.dense_output.o_time ; rm -f build/release/.dense_output.o_time ; st=$((`date '+%s'` - $st - 86400)) ; echo `date -u -d @$st '+%H:%M:%S'`
+read st < build/release/.timestamp.o_time ; rm -f build/release/.timestamp.o_time ; st=$((`date '+%s'` - $st - 86400)) ; echo `date -u -d @$st '+%H:%M:%S'`
 echo "Compiling: tests.c -> build/release/tests.o"
 date '+%s' > build/release/.tests.o_time
 cc  -std=c11 -Wall -Wextra -g -D NDEBUG -I . -MP -MMD -c tests.c -o build/release/tests.o
 echo -en "\t Compile time: "
 read st < build/release/.tests.o_time ; rm -f build/release/.tests.o_time ; st=$((`date '+%s'` - $st - 86400)) ; echo `date -u -d @$st '+%H:%M:%S'`
  
-echo "Linking: bin/release/Verner"
-date '+%s' > bin/release/.Verner_time
-cc build/release/Verner.o build/release/main.o build/release/butcher_tableau.o build/release/dense_output.o build/release/tests.o  -lm  -o bin/release/Verner
+echo "Linking: bin/release/verner"
+date '+%s' > bin/release/.verner_time
+cc build/release/main.o build/release/verner.o build/release/timestamp.o build/release/tests.o  -lm  -o bin/release/verner
 echo -en "\t Link time: "
-read st < bin/release/.Verner_time ; rm -f bin/release/.Verner_time ; st=$((`date '+%s'` - $st - 86400)) ; echo `date -u -d @$st '+%H:%M:%S'`
-echo "Making symlink: Verner -> bin/release/Verner"
-rm -f Verner
-ln -s bin/release/Verner Verner
- 
+read st < bin/release/.verner_time ; rm -f bin/release/.verner_time ; st=$((`date '+%s'` - $st - 86400)) ; echo `date -u -d @$st '+%H:%M:%S'`
+echo "Making symlink: verner -> bin/release/verner"
+rm -f verner
+ln -s bin/release/verner verner
 echo -n "Total build time: "
 read st < ./.release_time ; rm -f ./.release_time ; st=$((`date '+%s'` - $st - 86400)) ; echo `date -u -d @$st '+%H:%M:%S'`
 make: Leaving directory '/home/Nasio/Downloads/cooper-verner'

@@ -22,28 +22,28 @@ void verner(
     size_t number_of_outputs,
     double t_output[number_of_outputs]);
 
-static void *
+void *
 verner_alloc(size_t number_of_equations);
-static void
+void
 verner_compute_stages(void *vstate,
                       size_t number_of_equations,
                       double t,
                       double h_step,
                       double y[number_of_equations],
                       void (*RHS)(double, double *, double *));
-static void
+void
 verner_dense_output(void *vstate,
                     size_t number_of_equations,
                     double t,
                     double theta,
                     double h_step,
                     double y[number_of_equations]);
-static void
+void
 verner_apply(void *vstate,
              size_t number_of_equations,
              double h_step,
              double y[number_of_equations]);
-static void
+void
 verner_free(void *vstate);
 
 void timestamp(void);

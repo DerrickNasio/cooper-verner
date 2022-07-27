@@ -34,7 +34,7 @@ int main(void)
     y[0] = 1.0;
     y[1] = 0.0;
 
-    double h_step = 0.1; // The constant step size taken by the numerical integrator
+    double h_step = 0.1; // Constant step size
     printf("h_step = %G\n", h_step);
     printf("\n");
 
@@ -74,8 +74,8 @@ void verner(
     verner_state_t *state;
     state = verner_alloc(number_of_equations);
 
-    size_t step_counter = 0;                // Counts the steps taken by the integrator so far
-    const size_t max_number_of_steps = 500; // Impose a limit on the number of steps to be taken
+    size_t step_counter = 0;
+    const size_t max_number_of_steps = 500;
 
     while (step_counter < max_number_of_steps)
     {
@@ -85,11 +85,17 @@ void verner(
 
         for (size_t i = 0; i < number_of_outputs; i++)
         {
-            /* Calculate the auxiliary variable theta such that 0 <= theta <= 1. */
+            /* Calculate dense output variable theta.
+            Must be within range 0 <= theta <= 1. */
             double theta = (t_output[i] - t) / h_step;
 
             if (theta >= 0.0 && theta <= 1.0)
-                verner_dense_output(state, number_of_equations, t, theta, h_step, y);
+                verner_dense_output(state,
+                number_of_equations,
+                t,
+                theta,
+                h_step,
+                y);
             else
                 continue;
         }

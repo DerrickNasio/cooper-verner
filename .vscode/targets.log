@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Sun Jul 24 09:06:21 2022
+# Make data base, printed on Wed Jul 27 16:00:37 2022
 
 # Variables
 
@@ -69,7 +70,7 @@ VSCODE_CODE_CACHE_PATH = /home/Nasio/.config/Code/CachedData/b06ae3b2d2dbfe28bca
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.RWPIP1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.W3SXP1
 # default
 .LOADED := 
 # default
@@ -107,7 +108,7 @@ MAKEFILE_LIST := makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 2941
+VSCODE_PID = 17973
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -119,7 +120,7 @@ INSTALL = install
 # makefile (from 'makefile', line 18)
 INCLUDES = -I $(SRC_PATH)
 # environment
-SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/1629,unix/unix:/tmp/.ICE-unix/1629
+SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/1646,unix/unix:/tmp/.ICE-unix/1646
 # automatic
 *F = $(notdir $*)
 # environment
@@ -153,7 +154,7 @@ MAKEFILES :=
 # automatic
 ^F = $(notdir $^)
 # environment
-INVOCATION_ID = f2860f89367d4807bfd99b084cc112fb
+INVOCATION_ID = d4310a39053641fa89b8bc0f5ac72d95
 # environment
 USERNAME = Nasio
 # environment
@@ -189,7 +190,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := release
 # environment
-SYSTEMD_EXEC_PID = 1692
+SYSTEMD_EXEC_PID = 1699
 # environment
 HISTCONTROL = ignoredups
 # environment
@@ -203,13 +204,13 @@ MAKE_VERSION := 4.3
 # 'override' directive
 .SHELLSTATUS := 0
 # environment
-MANAGERPID = 1507
+MANAGERPID = 1524
 # environment
 which_declare = declare -f
 # environment
 DEBUGINFOD_URLS = https://debuginfod.fedoraproject.org/ 
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2941
+GIO_LAUNCHED_DESKTOP_FILE_PID = 17973
 # environment
 _ = /usr/bin/make
 # makefile (from 'makefile', line 24)
@@ -219,7 +220,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from 'makefile', line 28)
 INSTALL_PREFIX = usr/local
 # environment
-JOURNAL_STREAM = 8:27515
+JOURNAL_STREAM = 8:28147
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -265,9 +266,9 @@ rwildcard = $(foreach d, $(wildcard $1*), $(call rwildcard,$d/,$2) $(filter $(su
 
 # Directories
 
-# . (device 40, inode 153226): 18 files, no impossibilities.
+# . (device 40, inode 153226): 17 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 17 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -281,7 +282,6 @@ print-%:
 	@$(START_TIME)
 	$(CMD_PREFIX)$(CC) $(CFLAGS) $(INCLUDES) -MP -MMD -c $< -o $@
 	@echo -en "\t Compile time: "
- 
 	@$(END_TIME)
 
 # 2 implicit rules, 0 (0.0%) terminal.
@@ -308,6 +308,7 @@ print-%:
 #  File has not been updated.
 
 # makefile (from 'makefile', line 61)
+ 
 debug: BUILD_PATH := build/debug
 # makefile (from 'makefile', line 55)
 debug: CFLAGS :=  -std=c11 -Wall -Wextra -g -D DEBUG
@@ -374,6 +375,13 @@ clean:
 #  Failed to be updated.
 
 # Not a target:
+verner.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-26 20:58:49.70035
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -400,32 +408,31 @@ all: /verner
 	@ln -s $(BIN_PATH)/$(BIN_NAME) $(BIN_NAME)
 
 # Not a target:
-main.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-22 22:20:13.214363254
-#  File has been updated.
-#  Successfully updated.
+/main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-/main.o: main.c
+/verner.o: verner.c
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'main'
+#  Implicit/static pattern stem: 'verner'
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
-# @ := /main.o
+# @ := /verner.o
 # automatic
-# * := main
+# * := verner
 # automatic
-# < := main.c
+# < := verner.c
 # automatic
-# + := main.c
+# + := verner.c
 # automatic
 # % := 
 # automatic
-# ^ := main.c
+# ^ := verner.c
 # automatic
-# ? := main.c
+# ? := verner.c
 # automatic
 # | := 
 # variable set hash-table stats:
@@ -437,13 +444,7 @@ main.c:
 	@echo -en "\t Compile time: "
 	@$(END_TIME)
 
-# Not a target:
-/verner.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-/verner: /main.o /verner.o /timestamp.o /tests.o
+/verner: /verner.o /timestamp.o /tests.o /main.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
@@ -512,12 +513,12 @@ release: dirs
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 43 / storage = 362 B / avg = 8 B
-# current buf: size = 8162 B / used = 362 B / count = 43 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 41 / storage = 345 B / avg = 8 B
+# current buf: size = 8162 B / used = 345 B / count = 41 / avg = 8 B
 
-# strcache performance: lookups = 94 / hit rate = 54%
+# strcache performance: lookups = 93 / hit rate = 55%
 # hash-table stats:
-# Load=43/8192=1%, Rehash=0, Collisions=0/94=0%
-# Finished Make data base on Sun Jul 24 09:06:21 2022
+# Load=41/8192=1%, Rehash=0, Collisions=0/93=0%
+# Finished Make data base on Wed Jul 27 16:00:37 2022
 
  

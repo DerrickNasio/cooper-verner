@@ -1,9 +1,12 @@
+/*
+ * timestamp.c
+ * Print the current YMDHMS date as a time stamp
+ */
 #include <stdio.h>
 #include <time.h>
 
 #include "verner.h"
 
-/* Print the current YMDHMS date as a time stamp. */
 void timestamp(void)
 {
 #define TIME_SIZE 40
